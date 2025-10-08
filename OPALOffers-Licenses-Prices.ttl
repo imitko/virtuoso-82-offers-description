@@ -150,7 +150,7 @@ source: a schema:CreativeWork ;
     # -- Associates Licensed Product/Service with Service Host --
     schema:relatedLink oplres:uriburner-opal-server ;
     schema:provider <http://www.openlinksw.com/dataspace/organization/openlink#this> ; # Placeholder provider
-    schema:feature [ schema:name "HTU"@en ; schema:value <urn:oai:chat> ],
+    schema:feature [ schema:name "HTU"@en ; schema:value <urn:oai:chat> ],  ### XXX: are these relations used???
                    [ schema:name "rate-limit-max-sessions-per-agent"@en ; schema:value "3" ],
                    [ schema:name "session-reset-interval-seconds"@en ; schema:value "60" ],
                    [ schema:name "max-total-token-usage-per-session"@en ; schema:value "4096" ],
@@ -173,22 +173,22 @@ source: a schema:CreativeWork ;
     oplsof:hasOperatingSystemFamily   oplsof:OSFamilyAny ;
     oplsof:hasDatabaseFamily oplsof:WorldWideWeb ;
     schema:image <https://www.openlinksw.com/DAV/oplweb3/images/controlled-access-to-data-assets.jpg> ;
-    schema:name "Bring Your Own Key Chat Tier License for uriburner" ;
-    skos:prefLabel "Bring Your Own Key Chat Tier License for uriburner" ;
-    skos:altLabel "Bring Your Own Key Chat Tier License for uriburner" ;
+    schema:name "Bring Your Own Key Entry Level License for uriburner" ;
+    skos:prefLabel "Bring Your Own Key Entry Level License for uriburner" ;
+    skos:altLabel "Bring Your Own Key Entry Level License for uriburner" ;
     schema:description "License for interactive use of the OPAL Chat Service on uriburner using your own API key." ;
     opllic:productLicenseOf <#URIBurnerOPAL> ;
     opllic:partOf <http://data.openlinksw.com/oplweb/offer/BringYourOwnKeyChatTierOfferUriburner#this> ;
     opllic:hasDuration <http://data.openlinksw.com/oplweb/license/License-Duration#annual> ;
     wdrs:describedby source: .
 
-# -- Bring Your Own Key Chat Offer Description --
+# -- Bring Your Own Key Key Entry Level Chat Offer Description / UriBurner --
 <http://data.openlinksw.com/oplweb/offer/BringYourOwnKeyChatTierOfferUriburner#this> a schema:Offer, oplofr:SubscriptionOffer, oplofr:BringYourOwnKeyChatTierOffer ;
     oplofr:offerNumber "OPAL-CHAT-BYOK-UB-001"^^xsd:string ;
-    schema:name "OPAL Chat Service - Bring Your Own Key on uriburner" ;
-    skos:prefLabel "OPAL Chat Service - Bring Your Own Key on uriburner" ;
+    schema:name "OPAL Chat Service - Bring Your Own Key Entry Level on uriburner" ;
+    skos:prefLabel "OPAL Chat Service - Bring Your Own Key Key Entry Level on uriburner" ;
     schema:comment "This offer provides basic access to the OPAL Chat Service on uriburner, using your own API keys." ;
-    schema:description "Bring Your Own Key  access to the OPAL Chat Service on uriburner." ;
+    schema:description "Bring Your Own Key Key Entry Level access to the OPAL Chat Service on uriburner." ;
     wdrs:describedby source: ;
     schema:businessFunction gr:Sell ; # Even if free, it's an act of "selling"/providing
     schema:itemOffered <http://data.openlinksw.com/oplweb/license/BringYourOwnKeyChatTierLicenseUriburner#this> ;
@@ -425,8 +425,10 @@ source: a schema:CreativeWork ;
      ] .
 
 ## Restrictions
-## Requiring a Max value
 
+## Limits
+
+## Basic
 oplres:max-prompt-count-per-session a oplres:Restriction ;
   schema:name "Max prompts per session" ;
   schema:description "Users are limited to a maximum of 20 prompts within a single session" ;
@@ -436,35 +438,127 @@ oplres:max-prompt-count-per-session a oplres:Restriction ;
   oplres:hasRealm oplacl:DefaultRealm ;
   oplres:hasAgent <#BringYourOwnKeyChatUsers> ;
   oplres:hasAgent <#BringYourOwnKeyEntryLevelUsers> ;
-  oplres:hasAgent <#BringYourOwnKeyMediumLevelUsers> ;
-  oplres:hasAgent <#BringYourOwnKeyAdvancedLevelUsers> ;
   wdrs:describedby <#source> .
 
 oplres:max-token-usage-per-prompt a oplres:Restriction ;
   schema:name "Max tokens per prompt" ;
-  schema:description "Each prompt can use up to 2048 tokens" ;
+  schema:description "Each prompt can use up to 2000 tokens" ;
   oplres:hasRestrictedResource <urn:oai:chat> ;
   oplres:hasRestrictedParameter <urn:oai:chat:max-prompt-tokens> ;
-  oplres:hasMaxValue "2048"^^xsd:decimal ;
+  oplres:hasMaxValue "2000"^^xsd:decimal ;
   oplres:hasRealm oplacl:DefaultRealm ;
   oplres:hasAgent <#BringYourOwnKeyChatUsers> ;
   oplres:hasAgent <#BringYourOwnKeyEntryLevelUsers> ;
-  oplres:hasAgent <#BringYourOwnKeyMediumLevelUsers> ;
-  oplres:hasAgent <#BringYourOwnKeyAdvancedLevelUsers> ;
   wdrs:describedby <#source> .
 
 oplres:max-total-token-usage-per-session a oplres:Restriction ;
   schema:name "Max total tokens per session" ;
-  schema:description "The total token usage for an entire session is capped at 4096 tokens" ;
+  schema:description "The total token usage for an entire session is capped at 4000 tokens" ;
   oplres:hasRestrictedResource <urn:oai:chat> ;
   oplres:hasRestrictedParameter <urn:oai:chat:max-tokens> ;
-  oplres:hasMaxValue "4096"^^xsd:decimal ;
+  oplres:hasMaxValue "4000"^^xsd:decimal ;
   oplres:hasRealm oplacl:DefaultRealm ;
   oplres:hasAgent <#BringYourOwnKeyChatUsers> ;
   oplres:hasAgent <#BringYourOwnKeyEntryLevelUsers> ;
+  wdrs:describedby <#source> .
+
+## Medium
+oplres:max-prompt-count-per-session-med-offer a oplres:Restriction ;
+  schema:name "Max prompts per session" ;
+  schema:description "Users are limited to a maximum of 200 prompts within a single session" ;
+  oplres:hasRestrictedResource <urn:oai:chat> ;
+  oplres:hasRestrictedParameter <urn:oai:chat:max-prompts> ;
+  oplres:hasMaxValue "200"^^xsd:decimal ;
+  oplres:hasRealm oplacl:DefaultRealm ;
   oplres:hasAgent <#BringYourOwnKeyMediumLevelUsers> ;
+  wdrs:describedby <#source> .
+
+oplres:max-token-usage-per-prompti-med-offer a oplres:Restriction ;
+  schema:name "Max tokens per prompt" ;
+  schema:description "Each prompt can use up to 20000 tokens" ;
+  oplres:hasRestrictedResource <urn:oai:chat> ;
+  oplres:hasRestrictedParameter <urn:oai:chat:max-prompt-tokens> ;
+  oplres:hasMaxValue "20000"^^xsd:decimal ;
+  oplres:hasRealm oplacl:DefaultRealm ;
+  oplres:hasAgent <#BringYourOwnKeyMediumLevelUsers> ;
+  wdrs:describedby <#source> .
+
+oplres:max-total-token-usage-per-session-med-offer a oplres:Restriction ;
+  schema:name "Max total tokens per session" ;
+  schema:description "The total token usage for an entire session is capped at 40000 tokens" ;
+  oplres:hasRestrictedResource <urn:oai:chat> ;
+  oplres:hasRestrictedParameter <urn:oai:chat:max-tokens> ;
+  oplres:hasMaxValue "40000"^^xsd:decimal ;
+  oplres:hasRealm oplacl:DefaultRealm ;
+  oplres:hasAgent <#BringYourOwnKeyMediumLevelUsers> ;
+  wdrs:describedby <#source> .
+
+
+## Advanced
+oplres:max-prompt-count-per-session-adv-offer a oplres:Restriction ;
+  schema:name "Max prompts per session" ;
+  schema:description "Users are limited to a maximum of 400 prompts within a single session" ;
+  oplres:hasRestrictedResource <urn:oai:chat> ;
+  oplres:hasRestrictedParameter <urn:oai:chat:max-prompts> ;
+  oplres:hasMaxValue "400"^^xsd:decimal ;
+  oplres:hasRealm oplacl:DefaultRealm ;
   oplres:hasAgent <#BringYourOwnKeyAdvancedLevelUsers> ;
   wdrs:describedby <#source> .
+
+oplres:max-token-usage-per-prompt-adv-offer a oplres:Restriction ;
+  schema:name "Max tokens per prompt" ;
+  schema:description "Each prompt can use up to 100k tokens" ;
+  oplres:hasRestrictedResource <urn:oai:chat> ;
+  oplres:hasRestrictedParameter <urn:oai:chat:max-prompt-tokens> ;
+  oplres:hasMaxValue "100000"^^xsd:decimal ;
+  oplres:hasRealm oplacl:DefaultRealm ;
+  oplres:hasAgent <#BringYourOwnKeyAdvancedLevelUsers> ;
+  wdrs:describedby <#source> .
+
+oplres:max-total-token-usage-per-session-adv-offer a oplres:Restriction ;
+  schema:name "Max total tokens per session" ;
+  schema:description "The total token usage for an entire session is capped at 200k tokens" ;
+  oplres:hasRestrictedResource <urn:oai:chat> ;
+  oplres:hasRestrictedParameter <urn:oai:chat:max-tokens> ;
+  oplres:hasMaxValue "200000"^^xsd:decimal ;
+  oplres:hasRealm oplacl:DefaultRealm ;
+  oplres:hasAgent <#BringYourOwnKeyAdvancedLevelUsers> ;
+  wdrs:describedby <#source> .
+
+
+## Max
+oplres:max-prompt-count-per-session-max-offer a oplres:Restriction ;
+  schema:name "Max prompts per session" ;
+  schema:description "Users are limited to a maximum of 1k prompts within a single session" ;
+  oplres:hasRestrictedResource <urn:oai:chat> ;
+  oplres:hasRestrictedParameter <urn:oai:chat:max-prompts> ;
+  oplres:hasMaxValue "1000"^^xsd:decimal ;
+  oplres:hasRealm oplacl:DefaultRealm ;
+  oplres:hasAgent <#MaxLevelUsers> ;
+  wdrs:describedby <#source> .
+
+oplres:max-token-usage-per-prompt-max-offer a oplres:Restriction ;
+  schema:name "Max tokens per prompt" ;
+  schema:description "Each prompt can use up to 500k tokens" ;
+  oplres:hasRestrictedResource <urn:oai:chat> ;
+  oplres:hasRestrictedParameter <urn:oai:chat:max-prompt-tokens> ;
+  oplres:hasMaxValue "500000"^^xsd:decimal ;
+  oplres:hasRealm oplacl:DefaultRealm ;
+  oplres:hasAgent <#MaxLevelUsers> ;
+  wdrs:describedby <#source> .
+
+oplres:max-total-token-usage-per-session-max-offer a oplres:Restriction ;
+  schema:name "Max total tokens per session" ;
+  schema:description "The total token usage for an entire session is capped at 1M tokens" ;
+  oplres:hasRestrictedResource <urn:oai:chat> ;
+  oplres:hasRestrictedParameter <urn:oai:chat:max-tokens> ;
+  oplres:hasMaxValue "1000000"^^xsd:decimal ;
+  oplres:hasRealm oplacl:DefaultRealm ;
+  oplres:hasAgent <#MaxLevelUsers> ;
+  wdrs:describedby <#source> .
+
+
+## Modules & Tools
 
 ## Requiring a value
 oplres:restrict-enable-api-keys a oplres:Restriction ;
