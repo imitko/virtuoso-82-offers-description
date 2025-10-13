@@ -248,7 +248,7 @@ source: a schema:CreativeWork ;
     wdrs:describedby source: .
 
 # -- Data Twingler Access Tier License Description (ods-qa server)--
-<http://data.openlinksw.com/oplweb/license/DataTwinglerSpecificModuleTierLicenseOds-qa#this> a opllic:ProductLicense, opllic:ExpiringLicense, schema:Product, opllic:ACLOnly, opllic:SubscriptionLicense ;
+<http://data.openlinksw.com/oplweb/license/DataTwinglerSpecificModuleTierLicenseOds-qa#this> a opllic:ProductLicense, opllic:ExpiringLicense, opllic:Product, opllic:ACLOnly, opllic:SubscriptionLicense ;
     oplsof:hasOperatingSystemFamily   oplsof:OSFamilyAny ;
     oplsof:hasDatabaseFamily oplsof:WorldWideWeb ;
     schema:image <https://www.openlinksw.com/DAV/oplweb3/images/controlled-access-to-data-assets.jpg> ;
@@ -278,6 +278,141 @@ source: a schema:CreativeWork ;
     schema:potentialAction <https://shop.openlinksw.com/cart.vsp?command=add&item=http%3A%2F%2Fdata.openlinksw.com%2Foplweb%2Foffer%2FDataTwinglerSpecificModuleTierOfferOds-qa%23this> ;
     skos:related [oplpro:hasFamily    <http://data.openlinksw.com/oplweb/product_family/virtuoso#this> ] .
 
+# -- Data Twingler Access Entry
+<http://data.openlinksw.com/oplweb/offer-unitprice/DataTwinglerSpecificModuleEntryLevelTierPriceSpecification#this> a schema:UnitPriceSpecification, oplofr:RetailUnitPriceSpecification,  oplofr:SubscriptionPriceSpecification ;
+    schema:priceCurrency "USD"^^xsd:string ;
+    schema:price "0.00"^^xsd:decimal ; # Example price
+    schema:valueAddedTaxIncluded "false"^^xsd:boolean ;
+    schema:unitCode "C62"^^xsd:string ; # Piece
+    schema:name "Data Twingler Specific Access - Basic Tier" ;
+    schema:validFrom "2025-01-01T00:00:00Z"^^xsd:dateTime ; # Placeholder
+    schema:validThrough "2025-12-31T23:59:59Z"^^xsd:dateTime ; # Placeholder
+    oplofr:interval "month"^^xsd:string ;
+    oplofr:intervalCount "1"^^xsd:integer ;
+    wdrs:describedby source: .
+
+# -- Data Twingler Access Basic Tier License Description (ods-qa server)--
+<http://data.openlinksw.com/oplweb/license/DataTwinglerSpecificModuleEntryLevelTierLicenseOds-qa#this> a opllic:ProductLicense, opllic:ExpiringLicense, opllic:Product, opllic:ACLOnly, opllic:SubscriptionLicense ;
+    oplsof:hasOperatingSystemFamily   oplsof:OSFamilyAny ;
+    oplsof:hasDatabaseFamily oplsof:WorldWideWeb ;
+    schema:image <https://www.openlinksw.com/DAV/oplweb3/images/controlled-access-to-data-assets.jpg> ;
+    schema:name "Data Twingler Specific Module Entry Level License" ;
+    skos:prefLabel "Data Twingler Specific Module Entry Level License" ;
+    skos:altLabel "Data Twingler Specific Module Entry Level License" ;
+    schema:description "License for interactive use of the OPAL Data Twingler Module on a BYOK basis." ;
+    opllic:productLicenseOf <#ods-qaOPAL> ;
+    opllic:partOf <http://data.openlinksw.com/oplweb/offer/DataTwinglerSpecificModuleEntryLevelTierOffer#this> ;
+    opllic:hasDuration <http://data.openlinksw.com/oplweb/license/License-Duration#annual> ;
+    wdrs:describedby source: .
+
+# -- Data Twingler Access Offer Description --
+<http://data.openlinksw.com/oplweb/offer/DataTwinglerSpecificModuleEntryLevelTierOfferOds-qa#this> a schema:Offer, oplofr:SubscriptionOffer, oplofr:DataTwinglerSpecificModuleEntryLevelTierOffer ;
+    oplofr:offerNumber "OPAL-CHAT-DATATWINGLER-ODSQA-000"^^xsd:string ;
+    schema:name "OPAL Data Twingler Module - Entry Level" ;
+    skos:prefLabel "OPAL Data Twingler Module - Entry Level" ;
+    schema:comment "This offer allows use of the OPAL Data Twingler Entry Level Module using your own key." ;
+    schema:description "Access to the OPAL Data Twingler Entry Level Module on ods-qa." ;
+    wdrs:describedby source: ;
+    schema:businessFunction gr:Sell ;
+    schema:itemOffered <http://data.openlinksw.com/oplweb/license/DataTwinglerSpecificModuleEntryLevelTierLicenseOds-qa#this> ;
+    schema:priceSpecification <http://data.openlinksw.com/oplweb/offer-unitprice/DataTwinglerSpecificModuleEntryLevelTierPriceSpecification#this> ;
+    oplofr:isMemberOf <#OfferGroupChatService> ;
+    schema:validFrom "2025-01-01T00:00:00Z"^^xsd:dateTime ;
+    schema:validThrough "2025-12-31T23:59:59Z"^^xsd:dateTime ;
+    schema:potentialAction <https://shop.openlinksw.com/cart.vsp?command=add&item=http%3A%2F%2Fdata.openlinksw.com%2Foplweb%2Foffer%2FDataTwinglerSpecificModuleEntryLevelTierOfferOds-qa%23this> ;
+    skos:related [oplpro:hasFamily    <http://data.openlinksw.com/oplweb/product_family/virtuoso#this> ] .
+
+
+
+# -- Data Twingler Access Medium
+<http://data.openlinksw.com/oplweb/offer-unitprice/DataTwinglerSpecificModuleMediumTierPriceSpecification#this> a schema:UnitPriceSpecification, oplofr:RetailUnitPriceSpecification,  oplofr:SubscriptionPriceSpecification ;
+    schema:priceCurrency "USD"^^xsd:string ;
+    schema:price "9.99"^^xsd:decimal ; # Example price
+    schema:valueAddedTaxIncluded "false"^^xsd:boolean ;
+    schema:unitCode "C62"^^xsd:string ; # Piece
+    schema:name "Data Twingler Specific Access - Medium Tier" ;
+    schema:validFrom "2025-01-01T00:00:00Z"^^xsd:dateTime ; # Placeholder
+    schema:validThrough "2025-12-31T23:59:59Z"^^xsd:dateTime ; # Placeholder
+    oplofr:interval "month"^^xsd:string ;
+    oplofr:intervalCount "1"^^xsd:integer ;
+    wdrs:describedby source: .
+
+# -- Data Twingler Access Medium Tier License Description (ods-qa server)--
+<http://data.openlinksw.com/oplweb/license/DataTwinglerSpecificModuleMediumTierLicenseOds-qa#this> a opllic:ProductLicense, opllic:ExpiringLicense, opllic:Product, opllic:ACLOnly, opllic:SubscriptionLicense ;
+    oplsof:hasOperatingSystemFamily   oplsof:OSFamilyAny ;
+    oplsof:hasDatabaseFamily oplsof:WorldWideWeb ;
+    schema:image <https://www.openlinksw.com/DAV/oplweb3/images/controlled-access-to-data-assets.jpg> ;
+    schema:name "Data Twingler Specific Module Medium Tier License" ;
+    skos:prefLabel "Data Twingler Specific Module Medium Tier License" ;
+    skos:altLabel "Data Twingler Specific Module Medium Tier License" ;
+    schema:description "License for interactive use of the OPAL Data Twingler Module on a BYOK basis." ;
+    opllic:productLicenseOf <#ods-qaOPAL> ;
+    opllic:partOf <http://data.openlinksw.com/oplweb/offer/DataTwinglerSpecificModuleMediumTierOffer#this> ;
+    opllic:hasDuration <http://data.openlinksw.com/oplweb/license/License-Duration#annual> ;
+    wdrs:describedby source: .
+
+# -- Data Twingler Access Offer Description --
+<http://data.openlinksw.com/oplweb/offer/DataTwinglerSpecificModuleMediumTierOfferOds-qa#this> a schema:Offer, oplofr:SubscriptionOffer, oplofr:DataTwinglerSpecificModuleMediumTierOffer ;
+    oplofr:offerNumber "OPAL-CHAT-DATATWINGLER-ODSQA-002"^^xsd:string ;
+    schema:name "OPAL Data Twingler Module - Medium Tier" ;
+    skos:prefLabel "OPAL Data Twingler Module - Medium Tier" ;
+    schema:comment "This offer allows use of the OPAL Data Twingler Medium Tier Module using your own key." ;
+    schema:description "Access to the OPAL Data Twingler Module Medium Tier on ods-qa." ;
+    wdrs:describedby source: ;
+    schema:businessFunction gr:Sell ;
+    schema:itemOffered <http://data.openlinksw.com/oplweb/license/DataTwinglerSpecificModuleMediumTierLicenseOds-qa#this> ;
+    schema:priceSpecification <http://data.openlinksw.com/oplweb/offer-unitprice/DataTwinglerSpecificModuleMediumTierPriceSpecification#this> ;
+    oplofr:isMemberOf <#OfferGroupChatService> ;
+    schema:validFrom "2025-01-01T00:00:00Z"^^xsd:dateTime ;
+    schema:validThrough "2025-12-31T23:59:59Z"^^xsd:dateTime ;
+    schema:potentialAction <https://shop.openlinksw.com/cart.vsp?command=add&item=http%3A%2F%2Fdata.openlinksw.com%2Foplweb%2Foffer%2FDataTwinglerSpecificModuleMediumTierOfferOds-qa%23this> ;
+    skos:related [oplpro:hasFamily    <http://data.openlinksw.com/oplweb/product_family/virtuoso#this> ] .
+
+# -- Data Twingler Access Advanced
+<http://data.openlinksw.com/oplweb/offer-unitprice/DataTwinglerSpecificModuleAdvancedTierPriceSpecification#this> a schema:UnitPriceSpecification, oplofr:RetailUnitPriceSpecification,  oplofr:SubscriptionPriceSpecification ;
+    schema:priceCurrency "USD"^^xsd:string ;
+    schema:price "19.99"^^xsd:decimal ; # Example price
+    schema:valueAddedTaxIncluded "false"^^xsd:boolean ;
+    schema:unitCode "C62"^^xsd:string ; # Piece
+    schema:name "Data Twingler Specific Access - Advanced Tier" ;
+    schema:validFrom "2025-01-01T00:00:00Z"^^xsd:dateTime ; # Placeholder
+    schema:validThrough "2025-12-31T23:59:59Z"^^xsd:dateTime ; # Placeholder
+    oplofr:interval "month"^^xsd:string ;
+    oplofr:intervalCount "1"^^xsd:integer ;
+    wdrs:describedby source: .
+
+# -- Data Twingler Access Advanced Tier License Description (ods-qa server)--
+<http://data.openlinksw.com/oplweb/license/DataTwinglerSpecificModuleAdvancedTierLicenseOds-qa#this> a opllic:ProductLicense, opllic:ExpiringLicense, opllic:Product, opllic:ACLOnly, opllic:SubscriptionLicense ;
+    oplsof:hasOperatingSystemFamily   oplsof:OSFamilyAny ;
+    oplsof:hasDatabaseFamily oplsof:WorldWideWeb ;
+    schema:image <https://www.openlinksw.com/DAV/oplweb3/images/controlled-access-to-data-assets.jpg> ;
+    schema:name "Data Twingler Specific Module Advanced Tier License" ;
+    skos:prefLabel "Data Twingler Specific Module Advanced Tier License" ;
+    skos:altLabel "Data Twingler Specific Module Advanced Tier License" ;
+    schema:description "License for interactive use of the OPAL Data Advanced Tier Twingler Module on a BYOK basis." ;
+    opllic:productLicenseOf <#ods-qaOPAL> ;
+    opllic:partOf <http://data.openlinksw.com/oplweb/offer/DataTwinglerSpecificModuleAdvancedTierOffer#this> ;
+    opllic:hasDuration <http://data.openlinksw.com/oplweb/license/License-Duration#annual> ;
+    wdrs:describedby source: .
+
+# -- Data Twingler Access Offer Description --
+<http://data.openlinksw.com/oplweb/offer/DataTwinglerSpecificModuleAdvancedTierOfferOds-qa#this> a schema:Offer, oplofr:SubscriptionOffer, oplofr:DataTwinglerSpecificModuleAdvancedTierOffer ;
+    oplofr:offerNumber "OPAL-CHAT-DATATWINGLER-ODSQA-003"^^xsd:string ;
+    schema:name "OPAL Data Twingler Module - Advanced Tier" ;
+    skos:prefLabel "OPAL Data Twingler Module - Advanced Tier" ;
+    schema:comment "This offer allows use of the OPAL Data Twingler Module using your own key." ;
+    schema:description "Access to the OPAL Data Twingler Module on ods-qa." ;
+    wdrs:describedby source: ;
+    schema:businessFunction gr:Sell ;
+    schema:itemOffered <http://data.openlinksw.com/oplweb/license/DataTwinglerSpecificModuleAdvancedTierLicenseOds-qa#this> ;
+    schema:priceSpecification <http://data.openlinksw.com/oplweb/offer-unitprice/DataTwinglerSpecificModuleAdvancedTierPriceSpecification#this> ;
+    oplofr:isMemberOf <#OfferGroupChatService> ;
+    schema:validFrom "2025-01-01T00:00:00Z"^^xsd:dateTime ;
+    schema:validThrough "2025-12-31T23:59:59Z"^^xsd:dateTime ;
+    schema:potentialAction <https://shop.openlinksw.com/cart.vsp?command=add&item=http%3A%2F%2Fdata.openlinksw.com%2Foplweb%2Foffer%2FDataTwinglerSpecificModuleAdvancedTierOfferOds-qa%23this> ;
+    skos:related [oplpro:hasFamily    <http://data.openlinksw.com/oplweb/product_family/virtuoso#this> ] .
+
+
 
 # -- Price Specification for Support Assistant Access --
 # -- Support Assistant Access
@@ -293,7 +428,7 @@ source: a schema:CreativeWork ;
     wdrs:describedby source: .
 
 # -- Support Assistant Access Tier License Description (ods-qa server)--
-<http://data.openlinksw.com/oplweb/license/SupportAssistantAccessTierLicenseOds-qa#this> a opllic:ProductLicense, opllic:ExpiringLicense, schema:Product, opllic:ACLOnly, opllic:SubscriptionLicense ;
+<http://data.openlinksw.com/oplweb/license/SupportAssistantAccessTierLicenseOds-qa#this> a opllic:ProductLicense, opllic:ExpiringLicense, opllic:Product, opllic:ACLOnly, opllic:SubscriptionLicense ;
     oplsof:hasOperatingSystemFamily   oplsof:OSFamilyAny ;
     oplsof:hasDatabaseFamily oplsof:WorldWideWeb ;
     schema:image <https://www.openlinksw.com/DAV/oplweb3/images/controlled-access-to-data-assets.jpg> ;
@@ -305,7 +440,7 @@ source: a schema:CreativeWork ;
     opllic:partOf <http://data.openlinksw.com/oplweb/offer/SupportAssistantAccessTierOffer#this> ;
     opllic:hasDuration <http://data.openlinksw.com/oplweb/license/License-Duration#annual> ;
     wdrs:describedby source: .
-prefix oplres:    <http://www.openlinksw.com/ontology/restrictions#>
+
 # -- Support Assistant Access Offer Description --
 <http://data.openlinksw.com/oplweb/offer/SupportAssistantAccessTierOfferOds-qa#this> a schema:Offer, oplofr:SubscriptionOffer, oplofr:SupportAssistantAccessTierOffer ;
     oplofr:offerNumber "OPAL-CHAT-SUPPORTASSISTANT-ODSQA-001"^^xsd:string ;
@@ -338,7 +473,7 @@ prefix oplres:    <http://www.openlinksw.com/ontology/restrictions#>
     wdrs:describedby source: .
 
 # -- Max Chat Tier License Description --
-<http://data.openlinksw.com/oplweb/license/MaxChatTierLicenseOds-qa#this> a opllic:ProductLicense, schema:Product, opllic:ExpiringLicense, opllic:ACLOnly, opllic:SubscriptionLicense ;
+<http://data.openlinksw.com/oplweb/license/MaxChatTierLicenseOds-qa#this> a opllic:ProductLicense, opllic:Product, opllic:ExpiringLicense, opllic:ACLOnly, opllic:SubscriptionLicense ;
     oplsof:hasOperatingSystemFamily   oplsof:OSFamilyAny ;
     oplsof:hasDatabaseFamily oplsof:WorldWideWeb ;
     schema:image <https://www.openlinksw.com/DAV/oplweb3/images/controlled-access-to-data-assets.jpg> ;
@@ -551,6 +686,9 @@ prefix oplres:    <http://www.openlinksw.com/ontology/restrictions#>
 <http://www.openlinksw.com/dataspace/organization/openlink#this> schema:makesOffer
     <http://data.openlinksw.com/oplweb/offer/BringYourOwnKeyChatTierOfferOds-qa#this>,
     <http://data.openlinksw.com/oplweb/offer/DataTwinglerSpecificModuleTierOfferOds-qa#this>,
+    <http://data.openlinksw.com/oplweb/offer/DataTwinglerSpecificModuleEntryLevelTierOfferOds-qa#this>,
+    <http://data.openlinksw.com/oplweb/offer/DataTwinglerSpecificModuleMediumTierOfferOds-qa#this>,
+    <http://data.openlinksw.com/oplweb/offer/DataTwinglerSpecificModuleAdvancedTierOfferOds-qa#this>,
     <http://data.openlinksw.com/oplweb/offer/SupportAssistantAccessTierOfferOds-qa#this>,
     <http://data.openlinksw.com/oplweb/offer/MaxChatTierOfferOds-qa#this> ,
     <http://data.openlinksw.com/oplweb/offer/BringYourOwnKeyEntryLevelOfferOds-qa#this> ,
@@ -573,6 +711,20 @@ prefix oplres:    <http://www.openlinksw.com/ontology/restrictions#>
   oplacl:hasCondition [
     a oplacl:GroupCondition, oplacl:QueryCondition ;
     oplacl:hasQuery "prefix oplprchs:  <http://www.openlinksw.com/ontology/purchases#>prefix opllic:   <http://www.openlinksw.com/ontology/licenses#>prefix oplofr:    <http://www.openlinksw.com/ontology/offers#>prefix schema:    <http://schema.org/> ask from <urn:openlinksw.com:shop:purchases:cache> where { ^{uri}^ oplprchs:madePurchase ?purchase .   ?purchase oplprchs:contains ?offer ;   oplprchs:purchaseDate ?purchaseDate . ?offer a oplofr:DataTwinglerSpecificModuleTierOffer ; schema:itemOffered ?license .  ?license opllic:hasDuration ?duration .  ?duration opllic:durationYears ?years .  filter (bif:dateadd (\'day\', bif:atoi(?years) * 365, ?purchaseDate) > bif:now()) .  filter (sql:stripe_customer_has_active_product_subscription (^{uri}^, ?license) > 0) .}"
+     ] .
+
+<#DataTwinglerEntryLevelSpecificChatUsers> a oplacl:ConditionalGroup ;
+  foaf:name "OPAL Users identified using a NetID based Identifier who have purchased the Data Twingler Assistant offer and whose license is in date" ;
+  oplacl:hasCondition [
+    a oplacl:GroupCondition, oplacl:QueryCondition ;
+    oplacl:hasQuery "prefix oplprchs:  <http://www.openlinksw.com/ontology/purchases#>prefix opllic:   <http://www.openlinksw.com/ontology/licenses#>prefix oplofr:    <http://www.openlinksw.com/ontology/offers#>prefix schema:    <http://schema.org/> ask from <urn:openlinksw.com:shop:purchases:cache> where { ^{uri}^ oplprchs:madePurchase ?purchase .   ?purchase oplprchs:contains ?offer ;   oplprchs:purchaseDate ?purchaseDate . ?offer a oplofr:DataTwinglerSpecificModuleEntryLevelTierOffer ; schema:itemOffered ?license .  ?license opllic:hasDuration ?duration .  ?duration opllic:durationYears ?years .  filter (bif:dateadd (\'day\', bif:atoi(?years) * 365, ?purchaseDate) > bif:now()) .  filter (sql:stripe_customer_has_active_product_subscription (^{uri}^, ?license) > 0) .}"
+     ] .
+
+<#DataTwinglerMediumSpecificChatUsers> a oplacl:ConditionalGroup ;
+  foaf:name "OPAL Users identified using a NetID based Identifier who have purchased the Data Twingler Assistant offer and whose license is in date" ;
+  oplacl:hasCondition [
+    a oplacl:GroupCondition, oplacl:QueryCondition ;
+    oplacl:hasQuery "prefix oplprchs:  <http://www.openlinksw.com/ontology/purchases#>prefix opllic:   <http://www.openlinksw.com/ontology/licenses#>prefix oplofr:    <http://www.openlinksw.com/ontology/offers#>prefix schema:    <http://schema.org/> ask from <urn:openlinksw.com:shop:purchases:cache> where { ^{uri}^ oplprchs:madePurchase ?purchase .   ?purchase oplprchs:contains ?offer ;   oplprchs:purchaseDate ?purchaseDate . ?offer a oplofr:DataTwinglerSpecificModuleMediumTierOffer ; schema:itemOffered ?license .  ?license opllic:hasDuration ?duration .  ?duration opllic:durationYears ?years .  filter (bif:dateadd (\'day\', bif:atoi(?years) * 365, ?purchaseDate) > bif:now()) .  filter (sql:stripe_customer_has_active_product_subscription (^{uri}^, ?license) > 0) .}"
      ] .
 
 <#SupportAssistantChatUsers> a oplacl:ConditionalGroup ;
@@ -630,11 +782,8 @@ oplres:max-prompt-count-per-session a oplres:Restriction ;
   oplres:hasMaxValue "20"^^xsd:decimal ;
   oplres:hasRealm oplacl:DefaultRealm ;
   oplres:hasAgent <#BringYourOwnKeyChatUsers> ;
-  oplres:hasAgent <#DataTwinglerSpecificChatUsers> ;
-  oplres:hasAgent <#SupportAssistantChatUsers> ;
+  oplres:hasAgent <#DataTwinglerEntryLevelSpecificChatUsers> ;
   oplres:hasAgent <#BringYourOwnKeyEntryLevelUsers> ;
-  oplres:hasAgent <#BringYourOwnKeyMediumLevelUsers> ;
-  oplres:hasAgent <#BringYourOwnKeyAdvancedLevelUsers> ;
   wdrs:describedby <#source> .
 
 oplres:max-token-usage-per-prompt a oplres:Restriction ;
@@ -645,9 +794,8 @@ oplres:max-token-usage-per-prompt a oplres:Restriction ;
   oplres:hasMaxValue "2000"^^xsd:decimal ;
   oplres:hasRealm oplacl:DefaultRealm ;
   oplres:hasAgent <#BringYourOwnKeyChatUsers> ;
+  oplres:hasAgent <#DataTwinglerEntryLevelSpecificChatUsers> ;
   oplres:hasAgent <#BringYourOwnKeyEntryLevelUsers> ;
-  oplres:hasAgent <#BringYourOwnKeyMediumLevelUsers> ;
-  oplres:hasAgent <#BringYourOwnKeyAdvancedLevelUsers> ;
   wdrs:describedby <#source> .
 
 oplres:max-total-token-usage-per-session a oplres:Restriction ;
@@ -658,6 +806,7 @@ oplres:max-total-token-usage-per-session a oplres:Restriction ;
   oplres:hasMaxValue "4000"^^xsd:decimal ;
   oplres:hasRealm oplacl:DefaultRealm ;
   oplres:hasAgent <#BringYourOwnKeyChatUsers> ;
+  oplres:hasAgent <#DataTwinglerEntryLevelSpecificChatUsers> ;
   oplres:hasAgent <#BringYourOwnKeyEntryLevelUsers> ;
   wdrs:describedby <#source> .
 
@@ -670,6 +819,7 @@ oplres:max-prompt-count-per-session-med-offer a oplres:Restriction ;
   oplres:hasMaxValue "200"^^xsd:decimal ;
   oplres:hasRealm oplacl:DefaultRealm ;
   oplres:hasAgent <#BringYourOwnKeyMediumLevelUsers> ;
+  oplres:hasAgent <#DataTwinglerMediumSpecificChatUsers> ;
   wdrs:describedby <#source> .
 
 oplres:max-token-usage-per-prompti-med-offer a oplres:Restriction ;
@@ -680,6 +830,7 @@ oplres:max-token-usage-per-prompti-med-offer a oplres:Restriction ;
   oplres:hasMaxValue "20000"^^xsd:decimal ;
   oplres:hasRealm oplacl:DefaultRealm ;
   oplres:hasAgent <#BringYourOwnKeyMediumLevelUsers> ;
+  oplres:hasAgent <#DataTwinglerMediumSpecificChatUsers> ;
   wdrs:describedby <#source> .
 
 oplres:max-total-token-usage-per-session-med-offer a oplres:Restriction ;
@@ -690,6 +841,7 @@ oplres:max-total-token-usage-per-session-med-offer a oplres:Restriction ;
   oplres:hasMaxValue "40000"^^xsd:decimal ;
   oplres:hasRealm oplacl:DefaultRealm ;
   oplres:hasAgent <#BringYourOwnKeyMediumLevelUsers> ;
+  oplres:hasAgent <#DataTwinglerMediumSpecificChatUsers> ;
   wdrs:describedby <#source> .
 
 
@@ -733,6 +885,8 @@ oplres:max-prompt-count-per-session-max-offer a oplres:Restriction ;
   oplres:hasMaxValue "1000"^^xsd:decimal ;
   oplres:hasRealm oplacl:DefaultRealm ;
   oplres:hasAgent <#MaxLevelUsers> ;
+  oplres:hasAgent <#SupportAssistantChatUsers> ;
+  oplres:hasAgent <#DataTwinglerSpecificChatUsers> ;
   wdrs:describedby <#source> .
 
 oplres:max-token-usage-per-prompt-max-offer a oplres:Restriction ;
@@ -743,6 +897,8 @@ oplres:max-token-usage-per-prompt-max-offer a oplres:Restriction ;
   oplres:hasMaxValue "500000"^^xsd:decimal ;
   oplres:hasRealm oplacl:DefaultRealm ;
   oplres:hasAgent <#MaxLevelUsers> ;
+  oplres:hasAgent <#SupportAssistantChatUsers> ;
+  oplres:hasAgent <#DataTwinglerSpecificChatUsers> ;
   wdrs:describedby <#source> .
 
 oplres:max-total-token-usage-per-session-max-offer a oplres:Restriction ;
@@ -753,6 +909,8 @@ oplres:max-total-token-usage-per-session-max-offer a oplres:Restriction ;
   oplres:hasMaxValue "1000000"^^xsd:decimal ;
   oplres:hasRealm oplacl:DefaultRealm ;
   oplres:hasAgent <#MaxLevelUsers> ;
+  oplres:hasAgent <#SupportAssistantChatUsers> ;
+  oplres:hasAgent <#DataTwinglerSpecificChatUsers> ;
   wdrs:describedby <#source> .
 
 
